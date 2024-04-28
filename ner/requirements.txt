@@ -1,0 +1,4 @@
+pandas
+transformers==4.13.0
+datasets==1.16.1
+seqeval==1.2.2
