@@ -1,0 +1,25 @@
+Config lightweight_cnn_text_biolinkbert
+ConfigTree([('no_cuda', False), ('transformer', 'cambridgeltl/SapBERT-from-PubMedBERT-fulltext'), ('report_frequency', 100), ('epoch_evaluation_frequency', 5), ('gradient_accumulation_steps', 1), ('feature_proj', False), ('feature_size', 256), ('gradient_checkpointing', False), ('max_length', 25), ('use_synthetic_train', False), ('seed', 42), ('epochs', 100), ('batch_size', 512), ('transformer_learning_rate', 5e-05), ('task_learning_rate', 0.001), ('max_grad_norm', 1.0), ('max_patience', 4), ('loss_scale_pos', 2), ('loss_scale_neg', 50), ('loss_thresh', 0.5), ('loss_lambda', 0.2), ('online_kd', False), ('gradual_unfreezing', False), ('lightweight', True), ('hard_negatives_training', False), ('tokenizer', 'michiyasunaga/BioLinkBERT-base'), ('embedding_configs_fp', 'student_configs/embeddings-biolinkbert.json'), ('embedding_saved_path', '/jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/initial_embeddings/biolinkbert-base/embedding.pt'), ('cnn_type', 'cnn_text'), ('cnn_text_depth', 3), ('cnn_text_dropout', 0.25), ('pooling_type', 'max'), ('config_name', 'lightweight_cnn_text_biolinkbert'), ('dataset', 'bc8biored-chemical-aio'), ('do_predict_dev', True), ('do_predict_dev_gold', False), ('do_predict_test', False), ('result_dir', '/jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/results/bc8biored-chemical-aio/lightweight_cnn_text_biolinkbert/lr_0.001-depth_3-fs_256-drop_0.25'), ('save_dir', '/jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/trained_models/bc8biored-chemical-aio/lightweight_cnn_text_biolinkbert/lr_0.001-depth_3-fs_256-drop_0.25'), ('finetuned_model_dir', '/jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/trained_models/bc8biored-chemical-aio/lightweight_cnn_text_biolinkbert/lr_0.001-depth_3-fs_256-drop_0.25/model.pt')])
+Initializing new train, dev, test, and ontology
+Statistics on the ontology
+Number of entities: 176454
+Number of names: 454182
+Train: 2008 examples | Dev: 200 examples | Test: 224 examples
+Statistics on the ontology
+Number of entities: 176444
+Number of names: 453658
+Statistics on the ontology
+Number of entities: 176454
+Number of names: 454163
+Prepared the dataset (9.098334074020386 seconds)
+class LightWeightModel
+Reloaded embeddings from /jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/initial_embeddings/biolinkbert-base/embedding.pt
+use CNN_Text
+Prepared the model (Nb params: 23943454)
+Nb tunable params: 1355806
+Reload the fine-tuned model >> /jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/trained_models/bc8biored-chemical-aio/lightweight_cnn_text_biolinkbert/lr_0.001-depth_3-fs_256-drop_0.25/model.pt
+Building index for bc8biored-chemical-aio.json
+Building the index took 52.52046465873718 seconds
+Total actual encoding time 1.356687068939209
+Test results: {'top1_accuracy': 0.78125, 'top5_accuracy': 0.79018, 'top10_accuracy': 0.79018, 'top20_accuracy': 0.79018}
+224 224

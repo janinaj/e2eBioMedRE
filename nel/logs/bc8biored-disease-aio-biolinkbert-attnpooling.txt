@@ -1,0 +1,144 @@
+Config lightweight_cnn_text_with_attention_pooling_biolinkbert
+ConfigTree([('no_cuda', False), ('transformer', 'cambridgeltl/SapBERT-from-PubMedBERT-fulltext'), ('report_frequency', 100), ('epoch_evaluation_frequency', 5), ('gradient_accumulation_steps', 1), ('feature_proj', False), ('feature_size', 256), ('gradient_checkpointing', False), ('max_length', 25), ('use_synthetic_train', False), ('seed', 5), ('epochs', 100), ('batch_size', 512), ('transformer_learning_rate', 5e-05), ('task_learning_rate', 0.001), ('max_grad_norm', 1.0), ('max_patience', 4), ('loss_scale_pos', 2), ('loss_scale_neg', 50), ('loss_thresh', 0.5), ('loss_lambda', 0.2), ('online_kd', False), ('gradual_unfreezing', False), ('lightweight', True), ('hard_negatives_training', False), ('tokenizer', 'michiyasunaga/BioLinkBERT-base'), ('embedding_configs_fp', 'student_configs/embeddings-biolinkbert.json'), ('embedding_saved_path', '/jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/initial_embeddings/biolinkbert-base/embedding.pt'), ('cnn_type', 'cnn_text'), ('cnn_text_depth', 4), ('cnn_text_dropout', 0.25), ('pooling_type', 'attention'), ('config_name', 'lightweight_cnn_text_with_attention_pooling_biolinkbert'), ('dataset', 'bc8biored-disease-aio'), ('do_predict_dev', False), ('do_predict_dev_gold', False), ('do_predict_test', False), ('result_dir', '/jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/results/bc8biored-disease-aio/lightweight_cnn_text_with_attention_pooling_biolinkbert/lr_0.001-depth_4-fs_256-drop_0.25'), ('save_dir', '/jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/trained_models/bc8biored-disease-aio/lightweight_cnn_text_with_attention_pooling_biolinkbert/lr_0.001-depth_4-fs_256-drop_0.25'), ('finetuned_model_dir', '/jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/trained_models/bc8biored-disease-aio/lightweight_cnn_text_with_attention_pooling_biolinkbert/lr_0.001-depth_4-fs_256-drop_0.25/model.pt')])
+Initializing new train, dev, test, and ontology
+Statistics on the ontology
+Number of entities: 13786
+Number of names: 93809
+Train: 2842 examples | Dev: 379 examples | Test: 14191 examples
+Statistics on the ontology
+Number of entities: 17335
+Number of names: 151935
+Statistics on the ontology
+Number of entities: 13780
+Number of names: 93703
+Prepared the dataset (2.3584275245666504 seconds)
+class LightWeightModel
+Reloaded embeddings from /jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/initial_embeddings/biolinkbert-base/embedding.pt
+use CNN_Text
+Prepared the model (Nb params: 24362793)
+Nb tunable params: 1775145
+Evaluate the initial model on the DEV set
+Building index for bc8biored-disease-aio_train.json
+Building the index took 23.99782967567444 seconds
+Total actual encoding time 0.5866761207580566
+Building index for bc8biored-disease-aio_dev.json
+Building the index took 17.338716745376587 seconds
+Total actual encoding time 0.3450942039489746
+model_inference_time = 0.0024619102478027344
+Dev results: {'top1_accuracy': 0.781, 'top5_accuracy': 0.84433, 'top10_accuracy': 0.88918, 'top20_accuracy': 0.91821}
+Prepared the optimizer and the scheduler
+Starting epoch 1
+Starting epoch 2
+Starting epoch 3
+Starting epoch 4
+Starting epoch 5
+Starting building the index of the ontology
+Building index for bc8biored-disease-aio_train.json
+Building the index took 24.286499977111816 seconds
+Total actual encoding time 0.5626521110534668
+Building index for bc8biored-disease-aio_dev.json
+Building the index took 17.827998876571655 seconds
+Total actual encoding time 0.34942030906677246
+Evaluation on the dev set
+{'top1_accuracy': 0.82322, 'top5_accuracy': 0.90765, 'top10_accuracy': 0.92084, 'top20_accuracy': 0.94459}
+Evaluation on the dev set took 0.4993903636932373 seconds
+Saved the model
+Saved the prediction result with gold NER
+Starting epoch 6
+Starting epoch 7
+Starting epoch 8
+Starting epoch 9
+Starting epoch 10
+Starting building the index of the ontology
+Building index for bc8biored-disease-aio_train.json
+Building the index took 24.085080862045288 seconds
+Total actual encoding time 0.5631203651428223
+Building index for bc8biored-disease-aio_dev.json
+Building the index took 17.891432523727417 seconds
+Total actual encoding time 0.3502616882324219
+Evaluation on the dev set
+{'top1_accuracy': 0.83113, 'top5_accuracy': 0.88918, 'top10_accuracy': 0.91821, 'top20_accuracy': 0.93668}
+Evaluation on the dev set took 0.4814567565917969 seconds
+Saved the model
+Saved the prediction result with gold NER
+Starting epoch 11
+Starting epoch 12
+Starting epoch 13
+Starting epoch 14
+Starting epoch 15
+Starting building the index of the ontology
+Building index for bc8biored-disease-aio_train.json
+Building the index took 23.955430030822754 seconds
+Total actual encoding time 0.5672397613525391
+Building index for bc8biored-disease-aio_dev.json
+Building the index took 18.06463599205017 seconds
+Total actual encoding time 0.35219788551330566
+Evaluation on the dev set
+{'top1_accuracy': 0.84697, 'top5_accuracy': 0.90501, 'top10_accuracy': 0.92348, 'top20_accuracy': 0.94195}
+Evaluation on the dev set took 0.3770406246185303 seconds
+Saved the model
+Saved the prediction result with gold NER
+Starting epoch 16
+Starting epoch 17
+100 Average Loss = 0.441
+Starting epoch 18
+Starting epoch 19
+Starting epoch 20
+Starting building the index of the ontology
+Building index for bc8biored-disease-aio_train.json
+Building the index took 24.278101444244385 seconds
+Total actual encoding time 0.5599277019500732
+Building index for bc8biored-disease-aio_dev.json
+Building the index took 18.087553024291992 seconds
+Total actual encoding time 0.34871506690979004
+Evaluation on the dev set
+{'top1_accuracy': 0.83377, 'top5_accuracy': 0.91029, 'top10_accuracy': 0.93404, 'top20_accuracy': 0.94987}
+Evaluation on the dev set took 0.36228370666503906 seconds
+Starting epoch 21
+Starting epoch 22
+Starting epoch 23
+Starting epoch 24
+Starting epoch 25
+Starting building the index of the ontology
+Building index for bc8biored-disease-aio_train.json
+Building the index took 24.3141770362854 seconds
+Total actual encoding time 0.5601534843444824
+Building index for bc8biored-disease-aio_dev.json
+Building the index took 18.067126035690308 seconds
+Total actual encoding time 0.3492591381072998
+Evaluation on the dev set
+{'top1_accuracy': 0.83641, 'top5_accuracy': 0.91557, 'top10_accuracy': 0.92348, 'top20_accuracy': 0.94195}
+Evaluation on the dev set took 0.37150049209594727 seconds
+Starting epoch 26
+Starting epoch 27
+Starting epoch 28
+Starting epoch 29
+Starting epoch 30
+Starting building the index of the ontology
+Building index for bc8biored-disease-aio_train.json
+Building the index took 24.285564422607422 seconds
+Total actual encoding time 0.5599772930145264
+Building index for bc8biored-disease-aio_dev.json
+Building the index took 18.282089233398438 seconds
+Total actual encoding time 0.35125112533569336
+Evaluation on the dev set
+{'top1_accuracy': 0.83377, 'top5_accuracy': 0.89974, 'top10_accuracy': 0.92876, 'top20_accuracy': 0.94987}
+Evaluation on the dev set took 0.361346960067749 seconds
+Starting epoch 31
+Starting epoch 32
+Starting epoch 33
+Starting epoch 34
+200 Average Loss = 0.261
+Starting epoch 35
+Starting building the index of the ontology
+Building index for bc8biored-disease-aio_train.json
+Building the index took 24.250362396240234 seconds
+Total actual encoding time 0.5567574501037598
+Building index for bc8biored-disease-aio_dev.json
+Building the index took 18.122138261795044 seconds
+Total actual encoding time 0.3435547351837158
+Evaluation on the dev set
+{'top1_accuracy': 0.83377, 'top5_accuracy': 0.89446, 'top10_accuracy': 0.91821, 'top20_accuracy': 0.92876}
+Evaluation on the dev set took 0.3677852153778076 seconds
+Reached at Max Patience. Now End Training.
+{'top1_accuracy': 0.84697, 'top5_accuracy': 0.90501, 'top10_accuracy': 0.92348, 'top20_accuracy': 0.94195}

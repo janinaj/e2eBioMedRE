@@ -1,0 +1,25 @@
+Config lightweight_cnn_text_with_attention_pooling_biolinkbert
+ConfigTree([('no_cuda', False), ('transformer', 'cambridgeltl/SapBERT-from-PubMedBERT-fulltext'), ('report_frequency', 100), ('epoch_evaluation_frequency', 5), ('gradient_accumulation_steps', 1), ('feature_proj', False), ('feature_size', 256), ('gradient_checkpointing', False), ('max_length', 25), ('use_synthetic_train', False), ('seed', 42), ('epochs', 100), ('batch_size', 512), ('transformer_learning_rate', 5e-05), ('task_learning_rate', 0.001), ('max_grad_norm', 1.0), ('max_patience', 4), ('loss_scale_pos', 2), ('loss_scale_neg', 50), ('loss_thresh', 0.5), ('loss_lambda', 0.2), ('online_kd', False), ('gradual_unfreezing', False), ('lightweight', True), ('hard_negatives_training', False), ('tokenizer', 'michiyasunaga/BioLinkBERT-base'), ('embedding_configs_fp', 'student_configs/embeddings-biolinkbert.json'), ('embedding_saved_path', '/jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/initial_embeddings/biolinkbert-base/embedding.pt'), ('cnn_type', 'cnn_text'), ('cnn_text_depth', 4), ('cnn_text_dropout', 0.25), ('pooling_type', 'attention'), ('config_name', 'lightweight_cnn_text_with_attention_pooling_biolinkbert'), ('dataset', 'bc8biored-disease-aio'), ('do_predict_dev', True), ('do_predict_dev_gold', False), ('do_predict_test', False), ('result_dir', '/jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/results/bc8biored-disease-aio/lightweight_cnn_text_with_attention_pooling_biolinkbert/lr_0.001-depth_4-fs_256-drop_0.25'), ('save_dir', '/jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/trained_models/bc8biored-disease-aio/lightweight_cnn_text_with_attention_pooling_biolinkbert/lr_0.001-depth_4-fs_256-drop_0.25'), ('finetuned_model_dir', '/jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/trained_models/bc8biored-disease-aio/lightweight_cnn_text_with_attention_pooling_biolinkbert/lr_0.001-depth_4-fs_256-drop_0.25/model.pt')])
+Initializing new train, dev, test, and ontology
+Statistics on the ontology
+Number of entities: 13786
+Number of names: 93809
+Train: 2842 examples | Dev: 379 examples | Test: 400 examples
+Statistics on the ontology
+Number of entities: 17335
+Number of names: 151935
+Statistics on the ontology
+Number of entities: 13780
+Number of names: 93703
+Prepared the dataset (1.6519742012023926 seconds)
+class LightWeightModel
+Reloaded embeddings from /jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/initial_embeddings/biolinkbert-base/embedding.pt
+use CNN_Text
+Prepared the model (Nb params: 24362793)
+Nb tunable params: 1775145
+Reload the fine-tuned model >> /jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/trained_models/bc8biored-disease-aio/lightweight_cnn_text_with_attention_pooling_biolinkbert/lr_0.001-depth_4-fs_256-drop_0.25/model.pt
+Building index for bc8biored-disease-aio.json
+Building the index took 28.023760557174683 seconds
+Total actual encoding time 7.813575744628906
+Test results: {'top1_accuracy': 0.78, 'top5_accuracy': 0.7975, 'top10_accuracy': 0.7975, 'top20_accuracy': 0.7975}
+400 400

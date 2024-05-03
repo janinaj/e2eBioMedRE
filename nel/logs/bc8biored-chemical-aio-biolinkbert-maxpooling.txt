@@ -1,0 +1,189 @@
+Config lightweight_cnn_text_biolinkbert
+ConfigTree([('no_cuda', False), ('transformer', 'cambridgeltl/SapBERT-from-PubMedBERT-fulltext'), ('report_frequency', 100), ('epoch_evaluation_frequency', 5), ('gradient_accumulation_steps', 1), ('feature_proj', False), ('feature_size', 256), ('gradient_checkpointing', False), ('max_length', 25), ('use_synthetic_train', False), ('seed', 42), ('epochs', 100), ('batch_size', 512), ('transformer_learning_rate', 5e-05), ('task_learning_rate', 0.001), ('max_grad_norm', 1.0), ('max_patience', 4), ('loss_scale_pos', 2), ('loss_scale_neg', 50), ('loss_thresh', 0.5), ('loss_lambda', 0.2), ('online_kd', False), ('gradual_unfreezing', False), ('lightweight', True), ('hard_negatives_training', False), ('tokenizer', 'michiyasunaga/BioLinkBERT-base'), ('embedding_configs_fp', 'student_configs/embeddings-biolinkbert.json'), ('embedding_saved_path', '/jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/initial_embeddings/biolinkbert-base/embedding.pt'), ('cnn_type', 'cnn_text'), ('cnn_text_depth', 3), ('cnn_text_dropout', 0.25), ('pooling_type', 'max'), ('config_name', 'lightweight_cnn_text_biolinkbert'), ('dataset', 'bc8biored-chemical-aio'), ('do_predict_dev', False), ('do_predict_dev_gold', False), ('do_predict_test', False), ('result_dir', '/jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/results/bc8biored-chemical-aio/lightweight_cnn_text_biolinkbert/lr_0.001-depth_3-fs_256-drop_0.25'), ('save_dir', '/jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/trained_models/bc8biored-chemical-aio/lightweight_cnn_text_biolinkbert/lr_0.001-depth_3-fs_256-drop_0.25'), ('finetuned_model_dir', '/jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/trained_models/bc8biored-chemical-aio/lightweight_cnn_text_biolinkbert/lr_0.001-depth_3-fs_256-drop_0.25/model.pt')])
+Initializing new train, dev, test, and ontology
+Statistics on the ontology
+Number of entities: 176454
+Number of names: 454182
+Train: 2008 examples | Dev: 200 examples | Test: 6552 examples
+Statistics on the ontology
+Number of entities: 176444
+Number of names: 453658
+Statistics on the ontology
+Number of entities: 176454
+Number of names: 454163
+Prepared the dataset (8.348514795303345 seconds)
+class LightWeightModel
+Reloaded embeddings from /jet/home/ghong1/rescnn_bioel_refactored/outputs/rescnn/initial_embeddings/biolinkbert-base/embedding.pt
+use CNN_Text
+Prepared the model (Nb params: 23943454)
+Nb tunable params: 1355806
+Evaluate the initial model on the DEV set
+Building index for bc8biored-chemical-aio_train.json
+Building the index took 59.06078243255615 seconds
+Total actual encoding time 10.110412359237671
+Building index for bc8biored-chemical-aio_dev.json
+Building the index took 50.15374445915222 seconds
+Total actual encoding time 1.1599440574645996
+model_inference_time = 0.0020017623901367188
+Dev results: {'top1_accuracy': 0.9, 'top5_accuracy': 0.925, 'top10_accuracy': 0.93, 'top20_accuracy': 0.94}
+Prepared the optimizer and the scheduler
+Starting epoch 1
+Starting epoch 2
+Starting epoch 3
+Starting epoch 4
+Starting epoch 5
+Starting building the index of the ontology
+Building index for bc8biored-chemical-aio_train.json
+Building the index took 49.502209424972534 seconds
+Total actual encoding time 1.1895170211791992
+Building index for bc8biored-chemical-aio_dev.json
+Building the index took 50.6672728061676 seconds
+Total actual encoding time 1.1597280502319336
+Evaluation on the dev set
+{'top1_accuracy': 0.92, 'top5_accuracy': 0.95, 'top10_accuracy': 0.955, 'top20_accuracy': 0.96}
+Evaluation on the dev set took 0.6026830673217773 seconds
+Saved the model
+Saved the prediction result with gold NER
+Starting epoch 6
+Starting epoch 7
+Starting epoch 8
+Starting epoch 9
+Starting epoch 10
+Starting building the index of the ontology
+Building index for bc8biored-chemical-aio_train.json
+Building the index took 49.00445771217346 seconds
+Total actual encoding time 1.1603045463562012
+Building index for bc8biored-chemical-aio_dev.json
+Building the index took 50.24527978897095 seconds
+Total actual encoding time 1.0911829471588135
+Evaluation on the dev set
+{'top1_accuracy': 0.93, 'top5_accuracy': 0.95, 'top10_accuracy': 0.96, 'top20_accuracy': 0.965}
+Evaluation on the dev set took 0.592292308807373 seconds
+Saved the model
+Saved the prediction result with gold NER
+Starting epoch 11
+Starting epoch 12
+Starting epoch 13
+Starting epoch 14
+Starting epoch 15
+Starting building the index of the ontology
+Building index for bc8biored-chemical-aio_train.json
+Building the index took 48.975139141082764 seconds
+Total actual encoding time 1.109330177307129
+Building index for bc8biored-chemical-aio_dev.json
+Building the index took 51.15744972229004 seconds
+Total actual encoding time 1.1171627044677734
+Evaluation on the dev set
+{'top1_accuracy': 0.93, 'top5_accuracy': 0.955, 'top10_accuracy': 0.97, 'top20_accuracy': 0.975}
+Evaluation on the dev set took 0.6048171520233154 seconds
+Starting epoch 16
+Starting epoch 17
+Starting epoch 18
+Starting epoch 19
+Starting epoch 20
+Starting building the index of the ontology
+Building index for bc8biored-chemical-aio_train.json
+Building the index took 50.258978843688965 seconds
+Total actual encoding time 1.2319719791412354
+Building index for bc8biored-chemical-aio_dev.json
+Building the index took 52.34185314178467 seconds
+Total actual encoding time 1.1593315601348877
+Evaluation on the dev set
+{'top1_accuracy': 0.93, 'top5_accuracy': 0.96, 'top10_accuracy': 0.965, 'top20_accuracy': 0.975}
+Evaluation on the dev set took 0.6052780151367188 seconds
+Starting epoch 21
+Starting epoch 22
+Starting epoch 23
+Starting epoch 24
+Starting epoch 25
+100 Average Loss = 0.358
+Starting building the index of the ontology
+Building index for bc8biored-chemical-aio_train.json
+Building the index took 50.926727056503296 seconds
+Total actual encoding time 1.294450044631958
+Building index for bc8biored-chemical-aio_dev.json
+Building the index took 52.37957525253296 seconds
+Total actual encoding time 1.1899194717407227
+Evaluation on the dev set
+{'top1_accuracy': 0.93, 'top5_accuracy': 0.96, 'top10_accuracy': 0.965, 'top20_accuracy': 0.975}
+Evaluation on the dev set took 0.5948834419250488 seconds
+Starting epoch 26
+Starting epoch 27
+Starting epoch 28
+Starting epoch 29
+Starting epoch 30
+Starting building the index of the ontology
+Building index for bc8biored-chemical-aio_train.json
+Building the index took 49.36951541900635 seconds
+Total actual encoding time 1.2721436023712158
+Building index for bc8biored-chemical-aio_dev.json
+Building the index took 51.81972599029541 seconds
+Total actual encoding time 1.271944284439087
+Evaluation on the dev set
+{'top1_accuracy': 0.935, 'top5_accuracy': 0.965, 'top10_accuracy': 0.965, 'top20_accuracy': 0.97}
+Evaluation on the dev set took 0.8417978286743164 seconds
+Saved the model
+Saved the prediction result with gold NER
+Starting epoch 31
+Starting epoch 32
+Starting epoch 33
+Starting epoch 34
+Starting epoch 35
+Starting building the index of the ontology
+Building index for bc8biored-chemical-aio_train.json
+Building the index took 49.72197413444519 seconds
+Total actual encoding time 1.276444673538208
+Building index for bc8biored-chemical-aio_dev.json
+Building the index took 52.08330225944519 seconds
+Total actual encoding time 1.1962838172912598
+Evaluation on the dev set
+{'top1_accuracy': 0.93, 'top5_accuracy': 0.96, 'top10_accuracy': 0.97, 'top20_accuracy': 0.975}
+Evaluation on the dev set took 0.6256618499755859 seconds
+Starting epoch 36
+Starting epoch 37
+Starting epoch 38
+Starting epoch 39
+Starting epoch 40
+Starting building the index of the ontology
+Building index for bc8biored-chemical-aio_train.json
+Building the index took 49.81455874443054 seconds
+Total actual encoding time 1.1943161487579346
+Building index for bc8biored-chemical-aio_dev.json
+Building the index took 52.82788801193237 seconds
+Total actual encoding time 1.2600090503692627
+Evaluation on the dev set
+{'top1_accuracy': 0.93, 'top5_accuracy': 0.96, 'top10_accuracy': 0.965, 'top20_accuracy': 0.97}
+Evaluation on the dev set took 0.60115647315979 seconds
+Starting epoch 41
+Starting epoch 42
+Starting epoch 43
+Starting epoch 44
+Starting epoch 45
+Starting building the index of the ontology
+Building index for bc8biored-chemical-aio_train.json
+Building the index took 49.78724241256714 seconds
+Total actual encoding time 1.2136783599853516
+Building index for bc8biored-chemical-aio_dev.json
+Building the index took 52.12800312042236 seconds
+Total actual encoding time 1.2067410945892334
+Evaluation on the dev set
+{'top1_accuracy': 0.925, 'top5_accuracy': 0.96, 'top10_accuracy': 0.97, 'top20_accuracy': 0.975}
+Evaluation on the dev set took 0.6075632572174072 seconds
+Starting epoch 46
+Starting epoch 47
+Starting epoch 48
+Starting epoch 49
+Starting epoch 50
+200 Average Loss = 0.263
+Starting building the index of the ontology
+Building index for bc8biored-chemical-aio_train.json
+Building the index took 49.87923192977905 seconds
+Total actual encoding time 1.1970632076263428
+Building index for bc8biored-chemical-aio_dev.json
+Building the index took 52.71491479873657 seconds
+Total actual encoding time 1.2096161842346191
+Evaluation on the dev set
+{'top1_accuracy': 0.925, 'top5_accuracy': 0.96, 'top10_accuracy': 0.96, 'top20_accuracy': 0.97}
+Evaluation on the dev set took 0.6124362945556641 seconds
+Reached at Max Patience. Now End Training.
+{'top1_accuracy': 0.935, 'top5_accuracy': 0.965, 'top10_accuracy': 0.965, 'top20_accuracy': 0.97}
