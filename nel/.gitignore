@@ -1,5 +1,6 @@
 outputs/rescnn/trained_models/
 outputs/rescnn/initial_embeddings/
+finetuned_models/
 
 tmp/
 umls.2017AA.active.json
