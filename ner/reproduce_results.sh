@@ -6,10 +6,10 @@ source /jet/home/ghong1/miniconda3/bin/activate e2eBioMedRE
 echo "Activated e2eBioMedRE"
 
 python run_ner.py \
-  --model_name_or_path microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract \
+  --model_name_or_path microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract \
   --max_seq_length 512 --num_train_epochs 22 \
   --learning_rate 3e-05 \
-  --per_device_train_batch_size 16 \
+  --per_device_train_batch_size 32 \
   --do_train --do_eval --do_predict \
   --evaluation_strategy epoch \
   --text_column_name text --label_column_name labels \
