@@ -13,11 +13,11 @@ import csv
 
 import numpy as np
 import torch
-import matplotlib.pyplot as plt
-from math import floor
+# import matplotlib.pyplot as plt
+# from math import floor
 
 from torch.utils.data import DataLoader, TensorDataset
-from collections import Counter
+# from collections import Counter
 
 from torch.nn import CrossEntropyLoss
 
