@@ -76,9 +76,9 @@ After you train the ResCNN model and generate predictions, you need to combine t
 
 To evaluate the NEL task and integrate the different prediction files for RE input, you need to run all the blocks the following Jupyter Notebook file.
 
-'''bash
+```text
 ./align_and_eval_prediction.ipynb
-'''
+```
 
 The integrated prediction files are saved in *outputs/final* folder.
 
