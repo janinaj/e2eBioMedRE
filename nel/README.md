@@ -76,11 +76,13 @@ After you train the ResCNN model and generate predictions, you need to combine t
 
 To evaluate the NEL task and integrate the different prediction files for RE input, you need to run all the blocks the following Jupyter Notebook file.
 
-'''text
+'''bash
 ./align_and_eval_prediction.ipynb
 '''
 
 The integrated prediction files are saved in *outputs/final* folder.
+
+NOTE: To map predicted outputs of ResCNN, you need to generate your own mapping file which links your original form of predicted mentions to the input form of ResCNN. This is because ResCNN follows the protocol of BioSyn to normalize original mentions for training inputs. Now, we placed our mapping files in the *./resources/data/* based on our predicted mentions of NER model. But if you trained your own NER model which would make you have different NER predictions with ours, then you should generate your own mapping file by using [BioSyn](https://github.com/dmis-lab/BioSyn) module.
 
 ## 4. Data
 
