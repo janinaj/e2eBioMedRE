@@ -10,8 +10,9 @@ marker_tokens="[ENTITY]"
 python run_relation.py \
  --task litcoin \
  --with_mention_attention \
- --do_train --train_file ../data/RE/train-dev-filtered-biomedbert.json \
- --do_predict --test_file ../data/RE/test-filtered-biomedbert.json \
+ --do_train --train_file ../data/RE/train-filtered-biomedbert.json \
+ --do_predict --test_file ../data/RE/dev-filtered-biomedbert.json \
+ --do_eval --eval_file ../data/RE/dev-filtered-biomedbert.json \
  --model microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract \
  --model_max_seq_length 512 \
  --train_batch_size 32 \
